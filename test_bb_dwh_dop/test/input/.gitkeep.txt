@@ -1,0 +1,10 @@
+.GITKEEP.TXT UITLEG
+
+Git includeert lege folders niet in commits en dus niet in pushes naar GitHub. 
+Dat is een probleem wanneer gewerkt wordt met de MIR-mappenstructuur omdat meerdere lege folders worden klaargezet.
+Tijdens de ontwikkelingen aan een project worden deze lege folders al dan niet in gebruik genomen.
+Om verdere ontwikkelingen mogelijk te maken is het daarom nodig de volledige mappenstructuur te behouden in Git en GitHub.
+Dit kan onder meer door het toevoegen van een eenvoudig tekstbestand zoals dit .gitkeep.txt-bestand.
+Het behouden van de mappenstructuur in Git en GitHub is het enige doel van dit bestand.
+Zodra andere bestanden (die worden geïncludeerd in commits en pushes, die dus niet vermeld worden in het .gitignore-bestand) 
+worden toegevoegd aan de voorheen lege folders kan dit bestand in principe ook verwijderd worden omdat de functie is weggevallen.
