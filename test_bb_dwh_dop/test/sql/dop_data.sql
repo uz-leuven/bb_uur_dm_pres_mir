@@ -13,7 +13,7 @@ WITH hourly_grid AS (
     UNNEST(GENERATE_ARRAY(0, 23)) AS hour_num
     -- to be defined as parameter in pipeline; now hard coded for testing purposes
   WHERE
-    d.year IN (2024)
+    d.year IN (2024) --IN UNNEST(@years)
 )
 SELECT
   h.jaar,
@@ -50,7 +50,7 @@ WHERE
   )
   AND COALESCE(p.presence_detail.absence_type.absence_type_code, '') NOT IN ('WE', 'VL')
   -- an array or reference to parameters is script to be inserted when applyting to pipeline; now one unit hardcoded as for a test
-  AND (p.presence.unit.unit_code IN ('650'))
+  AND (p.presence.unit.unit_code IN ('650')) -- IN UNNEST(@units)
 GROUP BY
   h.jaar,
   p.activity_center.activity_center_code,
